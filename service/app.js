@@ -1,8 +1,9 @@
-const express = require("express")
-const morgan = require("morgan")
-const multer = require("multer")
-const path = require("path")
-const database = require("./config/database")
+import express from "express"
+import morgan from 'morgan'
+import multer from 'multer'
+import path from 'path'
+import database from './config/database'
+import routes from './routes'
 const app = express()
 
 app.set("port", 3000)
@@ -20,6 +21,6 @@ const storage = multer.diskStorage({
 app.use(multer({storage}).single("image") )
 
 //rutas
-app.use("/api", require("./routes"))
+app.use("/api", routes)
 
-module.exports = app
+export default app

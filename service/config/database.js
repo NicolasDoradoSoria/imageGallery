@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+import mongoose from 'mongoose'
+
 require("dotenv").config()
 
     const database = async () => {
@@ -14,5 +15,4 @@ require("dotenv").config()
         }
     }
 
-    
-module.exports = database
+export default database    

@@ -1,5 +1,5 @@
-const {Router} = require ("express")
-const fs  =  require("fs")
+import {Router} from 'express'
+import fs from 'fs'
 
 const router = Router();
 
@@ -15,5 +15,4 @@ fs.readdirSync(PATH_ROUTES).filter((file) => {
         router.use(`/${name}`, require(`./${file}`))
     }
 })
-
-module.exports= router
+export default router

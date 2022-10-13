@@ -1,4 +1,4 @@
-const {Schema, model} = require("mongoose")
+import {Schema, model} from 'mongoose'
 
 const Photo =new Schema({
     title: String,
@@ -7,4 +7,4 @@ const Photo =new Schema({
     public_id: String
 })
 
-module.exports =model("Photo", Photo)
+export default model("Photo", Photo)
