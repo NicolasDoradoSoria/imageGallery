@@ -2,4 +2,4 @@
 
 # dependencies
 service/node_modules
-
+service/.env

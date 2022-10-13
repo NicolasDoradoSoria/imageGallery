@@ -2,7 +2,7 @@ const express = require("express")
 const morgan = require("morgan")
 const multer = require("multer")
 const path = require("path")
-const database = require("./database/database")
+const database = require("./config/database")
 const app = express()
 
 app.set("port", 3000)
