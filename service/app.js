@@ -9,8 +9,11 @@ const app = express()
 app.set("port", 3000)
 database()
 app.use(morgan("dev"))
-app.use(express.json())
-app.use(express.urlencoded({extended: true}));
+
+// habilitar express.json
+app.use(express.json({ extended: true }))
+app.use(express.urlencoded({ extended: true }))
+
 const storage = multer.diskStorage({
     destination: path.join(__dirname, "public/uploads"),
     filename: (req, file, cb) =>{
