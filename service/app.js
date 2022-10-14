@@ -11,8 +11,8 @@ database()
 app.use(morgan("dev"))
 
 // habilitar express.json
-app.use(express.json({ extended: true }))
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 const storage = multer.diskStorage({
     destination: path.join(__dirname, "public/uploads"),

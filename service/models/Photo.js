@@ -5,6 +5,10 @@ const Photo =new Schema({
     description: String,
     imageURL: String,
     public_id: String
+},
+{
+  timestamps: true,
+  versionKey: false
 })
 
 export default model("Photo", Photo)

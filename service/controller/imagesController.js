@@ -7,6 +7,7 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET,
 })
+
 // muestra imagenes
 export const getImages = async (req, res) => {
     try {
@@ -18,6 +19,7 @@ export const getImages = async (req, res) => {
         res.status(500).send("hubo un error");
     }
 }
+
 // sube una imagen
 export const postImage = async (req, res) => {
     const { title, descripcion } = req.body
@@ -41,7 +43,7 @@ export const postImage = async (req, res) => {
 // elimina una imagen
 export const deleteImage = async (req, res) => {
     const { idImage } = req.params;
-    
+
     try {
         const photo = await Photo.findById(idImage);
         if (!photo) {
@@ -50,6 +52,7 @@ export const deleteImage = async (req, res) => {
         await Photo.findByIdAndDelete(idImage)
         await cloudinary.v2.uploader.destroy(photo.public_id)
         res.status(200).send("se a eliminado correctamente");
+        
     } catch (error) {
         console.log(error)
         res.status(500).send("hubo un error");
