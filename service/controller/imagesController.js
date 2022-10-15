@@ -64,9 +64,9 @@ export const getImageById = async (req, res) => {
     try {
         // buscamos la imagen
         const image = await Photo.findById(req.params.imageId)
-        
+
         // verificamos que exista la iamgen
-        if(image) return res.status(404).json({msg: "la imagen no existe"})
+        if(!image) return res.status(404).json({msg: "la imagen no existe"})
         
         res.status(200).json(image);
     } catch (error) {
