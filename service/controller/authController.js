@@ -34,6 +34,7 @@ export const registerUser = async (req, res) => {
     }
 }
 
+// login
 export const loginUser = async (req, res) => {
     // extraedr el email y passowrd
     const { email, password } = req.body
